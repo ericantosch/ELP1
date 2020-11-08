@@ -7,6 +7,7 @@
 \usepackage{amssymb}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{tikz}
 \usepackage[ngerman]{babel}
     \usetikzlibrary{arrows}
@@ -26,12 +27,11 @@
 
 \usepackage{anyfontsize}
 
-\usepackage[dvipsnames]{xcolor}
+\usepackage{xcolor}
 
 
 
 
-\renewcommand\qedsymbol{$\square$}
 \pagestyle{fancy}
 \fancyhead[L]{\leftmark}
 \fancyhead[R]{}
@@ -47,77 +47,108 @@
 
 \begin{tikzpicture}[overlay,remember picture]
 
-\fill[black!2] (current page.south west) rectangle (current page.north east);
+  \fill[black!2] (current page.south west) rectangle (current page.north east);
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(-.5,-6)$)}}]
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(-.5,-6)$)}}]
 
-\shade[rounded corners=18pt, left color=green, right color=blue!40] ($(current page.north west)+(-.5,-6)$) rectangle ++(9,1.5);
+    \shade[rounded corners=18pt, left color=green, right color=blue!40] ($(current page.north west)+(-.5,-6)$) rectangle ++(9,1.5);
 
-\end{scope}
+  \end{scope}
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(.5,-10)$)}}]
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(.5,-10)$)}}]
 
-\shade[rounded corners=18pt, left color=lightgray,right color=lightgray!60] ($(current page.north west)+(0.5,-10)$) rectangle ++(15,1.5);
+    \shade[rounded corners=18pt, left color=lightgray,right color=lightgray!60] ($(current page.north west)+(0.5,-10)$) rectangle ++(15,1.5);
 
-\end{scope}
+  \end{scope}
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(0.5,-10)$)}}]
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(0.5,-10)$)}}]
 
-\shade[rounded corners=8pt, left color=lightgray] ($(current page.north west)+(1.5,-9.55)$) rectangle ++(7,.6);
+    \shade[rounded corners=8pt, left color=lightgray] ($(current page.north west)+(1.5,-9.55)$) rectangle ++(7,.6);
 
-\end{scope}
+  \end{scope}
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-1.5,-3)$)}}]
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-1.5,-3)$)}}]
 
-\shade[rounded corners=12pt, left color=orange!80, right color=orange!60] ($(current page.north)+(-1.5,-3)$) rectangle ++(9,0.8);
+    \shade[rounded corners=12pt, left color=orange!80, right color=orange!60] ($(current page.north)+(-1.5,-3)$) rectangle ++(9,0.8);
 
-\end{scope}
+  \end{scope}
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-3,-8)$)}}]
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-3,-8)$)}}]
 
-\shade[rounded corners=28pt, left color=red!80, right color=red!80] ($(current page.north)+(-3,-8)$) rectangle ++(15,1.8);
+    \shade[rounded corners=28pt, left color=red!80, right color=red!80] ($(current page.north)+(-3,-8)$) rectangle ++(15,1.8);
 
-\end{scope}
+  \end{scope}
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(4,-15.5)$)}}]
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(4,-15.5)$)}}]
 
-\shade[rounded corners=25pt, left color=orange, right color=blue] ($(current page.north west)+(4,-15.5)$) rectangle ++(30,1.8);
+    \shade[rounded corners=25pt, left color=orange, right color=blue] ($(current page.north west)+(4,-15.5)$) rectangle ++(30,1.8);
 
-\end{scope}
+  \end{scope}
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(13,-10)$)}},]
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(13,-10)$)}},]
 
-\shade[rounded corners=22pt, left color=RoyalBlue
+    \shade[rounded corners=22pt, left color=blue,right color=green] ($(current page.north west)+(13,-10)$) rectangle ++(15,1.5);
 
-,right color=Emerald] ($(current page.north west)+(13,-10)$) rectangle ++(15,1.5);
+  \end{scope}
 
-\end{scope}
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(18,-8)$)}},]
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(18,-8)$)}},]
+    \shade[rounded corners=8pt, left color=lightgray] ($(current page.north west)+(18,-8)$) rectangle ++(15,0.6);
 
-\shade[rounded corners=8pt, left color=lightgray] ($(current page.north west)+(18,-8)$) rectangle ++(15,0.6);
+  \end{scope}
 
-\end{scope}
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(19,-5.65)$)}},]
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(19,-5.65)$)}},]
+    \shade[rounded corners=12pt, left color=lightgray] ($(current page.north west)+(19,-5.65)$) rectangle ++(15,0.8);
 
-\shade[rounded corners=12pt, left color=lightgray] ($(current page.north west)+(19,-5.65)$) rectangle ++(15,0.8);
+  \end{scope}
 
-\end{scope}
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(20,-9)$)}}]
 
-\begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(20,-9)$)}}]
+    \shade[rounded corners=20pt, left color=red, right color=red!80] ($(current page.north west)+(20,-9)$) rectangle ++(14,1.2);
 
-\shade[rounded corners=20pt, left color=red, right color=red!80] ($(current page.north west)+(20,-9)$) rectangle ++(14,1.2);
+  \end{scope}
 
-\end{scope}
+  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf Elektronik 1\\[10pt] Praktikum 1}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2020}};
 
-\draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf ANNUAL \\[10pt] REPORT}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{72}{86.4} \selectfont 2020}};
+  \node at ($(current page.center)+(0,-4)$) {{\fontsize{60}{72} \selectfont Passive Bauelemente}};
 
-\node at ($(current page.center)+(0,-4)$) {{\fontsize{60}{72} \selectfont Title of the Report}};
-
-\node[text width=4cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{19.2} \selectfont \textcolor{orange}{ \bf Author Name}} \\[3pt] Company Name\\[3pt] Address};
+  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Florian Tietjen\\[3pt] Eric Antosch};
 
 \end{tikzpicture}
+\newpage
+
+
+\tableofcontents
+
+
+\newpage
+
+\section{Serieninduktivität eines Drahtwiderstands}
+
+\subsection{Vorbereitung}
+\begin{figure}
+
+\end{figure}
+Zunächst wollen wir die gegebenen Formeln so umstellen, dass wir mit ihnen die gesuchten Größen errechnen können.
+
+Für unsere erste Schaltung gilt:
+\begin{equation}
+  f_{1Res} = \frac{1}{2\cdot \pi \cdot \sqrt{L_S \cdot C}}
+\end{equation}
+Durch ein wenig umstellen erhalten wir dann folgende Form, die wir dann quadrieren:
+\begin{align*}
+  \sqrt{L_S\cdot C} & = \frac{1}{2\cdot\pi \cdot f_{1Res}}    \\
+  L_S \cdot C       & = \frac{1}{4\cdot\pi^2\cdot f_{1Res}^2}
+\end{align*}
+Wir bringen nun zum Schluss noch $C$ auf die andere Seite und erhalten:
+\begin{equation}
+  L_S = \frac{1}{4\cdot\pi^2\cdot f_{1Res}^2\cdot C}
+\end{equation}
+Um nun schlussendlich auch die Parallelresonanzfrequenz zu berechnen, gibt es noch eine entsprechende Formel:
+\begin{equation}
+  f_{2Res} = \frac{\sqrt{1-\frac{R^2}{L_s/C}}}{2\cdot\pi\cdot\sqrt{L_S\cdot C}}
+\end{equation}
 \end{document}
 
 
