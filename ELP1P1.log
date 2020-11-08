@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.5.2)  8 NOV 2020 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.5.2)  8 NOV 2020 15:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -815,13 +815,13 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
 )
 
-d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:32: LaTeX Error: Option clash for package xcolor.
+d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:30: LaTeX Error: Option clash for package xcolor.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32 
+l.30 
      
 The package xcolor has already been loaded with options:
   []
@@ -832,53 +832,52 @@ Adding the global options:
 to your \documentclass declaration may fix this.
 Try typing  <return>  to proceed.
 
-(c:/texlive/2020/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks36
-\thm@bodyfont=\toks37
-\thm@headfont=\toks38
-\thm@notefont=\toks39
-\thm@headpunct=\toks40
-\thm@preskip=\skip61
-\thm@postskip=\skip62
-\thm@headsep=\skip63
-\dth@everypar=\toks41
-)
-\c@lemma=\count283
- (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+
+d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:34: LaTeX Error: Command \qedsymbol undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 \renewcommand\qedsymbol
+                            {$\square$}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count284
+\l__kernel_color_stack_int=\count283
 \l__pdf_internal_box=\box58
 ) (d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.aux)
 \openout1 = `ELP1P1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
  ABD: EveryShipout initializing macros (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count285
+\scratchcounter=\count284
 \scratchdimen=\dimen284
 \scratchbox=\box59
-\nofMPsegments=\count286
-\nofMParguments=\count287
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count288
+\nofMPsegments=\count285
+\nofMParguments=\count286
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count287
 \MPscratchDim=\dimen285
-\MPnumerator=\count289
-\makeMPintoPDFobject=\count290
-\everyMPtoPDFconversion=\toks43
+\MPnumerator=\count288
+\makeMPintoPDFobject=\count289
+\everyMPtoPDFconversion=\toks37
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -919,24 +918,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:58: Package xcolor Error: Undefined color `Dandelion'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.58 ...left color=Dandelion, right color=blue!40]
-                                                   ($(current page.north wes...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 Runaway argument?
 rounded corners=22pt, left color=RoyalBlue 
-d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:95: Paragraph ended before \pgfutil@next was complete.
+d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:91: Paragraph ended before \pgfutil@next was complete.
 <to be read again> 
                    \par 
-l.95 
+l.91 
      
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -963,11 +950,11 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no ( in font nullfont!
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -993,10 +980,10 @@ Missing character: There is no 5 in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:124: Extra }, or forgotten \endgroup.
+d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:120: Extra }, or forgotten \endgroup.
 \endpgfpicture ...globally \endgroup \hss \egroup 
                                                   \pgf@restore@layerlist@fro...
-l.124 \end{tikzpicture}
+l.120 \end{tikzpicture}
                        
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1004,10 +991,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:124: Missing } inserted.
+d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:120: Missing } inserted.
 <inserted text> 
                 }
-l.124 \end{tikzpicture}
+l.120 \end{tikzpicture}
                        
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1015,10 +1002,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:124: Extra }, or forgotten \endgroup.
+d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:120: Extra }, or forgotten \endgroup.
 \endpgfpicture ...dpicture \endgroup \hss \egroup 
                                                   \pgfsys@typesetpicturebox ...
-l.124 \end{tikzpicture}
+l.120 \end{tikzpicture}
                        
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1026,10 +1013,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:124: Missing } inserted.
+d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:120: Missing } inserted.
 <inserted text> 
                 }
-l.124 \end{tikzpicture}
+l.120 \end{tikzpicture}
                        
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1038,13 +1025,13 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:125: LaTeX Error: \begin{tikzpicture} on input line 52 ended by \end{document}.
+d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.tex:121: LaTeX Error: \begin{tikzpicture} on input line 48 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.125 \end{document}
+l.121 \end{document}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1053,13 +1040,13 @@ or  <return>  to continue without it.
 (d:/Projects/HAW/Semester_2/EL1/ELP/ELP1/ELP1P1.aux) )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 52 (\begingroup)
+### semi simple group (level 1) entered at line 48 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 26799 strings out of 480682
- 651147 string characters out of 5908554
- 1024090 words of memory out of 5000000
- 42278 multiletter control sequences out of 15000+600000
+ 26724 strings out of 480682
+ 650252 string characters out of 5908554
+ 1022809 words of memory out of 5000000
+ 42207 multiletter control sequences out of 15000+600000
  539429 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,6n,71p,473b,719s stack positions out of 5000i,500n,10000p,200000b,80000s
