@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{assets/scripts/tex/color-env}
 \usepackage[ngerman]{babel}
     \usetikzlibrary{arrows}
     \usetikzlibrary{arrows.meta,topaths}
@@ -125,7 +126,25 @@
 \newpage
 
 \section{Serieninduktivität eines Drahtwiderstands}
-
+\begin{task}
+  IIm ersten Versuch soll die Serieninduktivität eines Drahtwiderstands erst über Messung der Serienresonanzfrequenz bei
+  gegebenem Kondensator berechnet werden. Im Anschluss wird dann das Ergebnis genutzt, um das Verhalten der Schaltung bei Parallelresonanzfrequenz zu untersuchen.
+\end{task}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.8]{assets/images/Versuch1Schaltplan.PNG}
+    \caption{Schaltplan zur Bestimmung der Serienimpedanz eines Drahtwiderstands}
+  \end{center}
+\end{figure}
+\begin{devlist}
+  T
+  \begin{itemize}
+    \item Oszilloskop
+    \item Funktionsgenerator
+    \item HP 4294A Impedance Analyzer
+    \item Multimeter
+  \end{itemize}
+\end{devlist}
 \subsection{Vorbereitung}
 \begin{figure}
 
@@ -142,18 +161,167 @@ Durch ein wenig umstellen erhalten wir dann folgende Form, die wir dann quadrier
   L_S \cdot C       & = \frac{1}{4\cdot\pi^2\cdot f_{1Res}^2}
 \end{align*}
 Wir bringen nun zum Schluss noch $C$ auf die andere Seite und erhalten:
-\begin{equation}
+\begin{equation}\label{eq:LS}
   L_S = \frac{1}{4\cdot\pi^2\cdot f_{1Res}^2\cdot C}
 \end{equation}
 Um nun schlussendlich auch die Parallelresonanzfrequenz zu berechnen, gibt es noch eine entsprechende Formel:
-\begin{equation}
+\begin{equation}\label{eq:f2}
   f_{2Res} = \frac{\sqrt{1-\frac{R^2}{L_s/C}}}{2\cdot\pi\cdot\sqrt{L_S\cdot C}}
 \end{equation}
+\subsection{Versuchsdurchführung}
+Um die Resonanzfrequenz zu ermitteln, müssen die beiden Spannungen $U_1$ und $U_2$ in Phase sein.
+Dazu variieren wir also am Frequenzgenerator die Frequenz des Eingangssignals $U_1$ so lange, bis sich
+$U_1$ und $U_2$ am Oszilloskop überlagern. An diesem Punkt ist auch $U_2$ minimal.
+
+\subsection{Auswertung}
+
+Unsere abgelesene Resonanzfrequenz liegt nun also bei: $f_{1Res} = kHz$.
+Aus dieser können wir mit (\ref{eq:LS}) die gesuchte Serieninduktivität des Drahtwiderstands berechnen: $L_S = \mu H$\\[3pt]
+Um nun die Serienresonanzfrequenz mit der Parallelresonanzfrequenz zu vergleichen, setzen wir unsere errechnete Induktivität in
+(\ref{eq:f2}) ein und erhalten dadurch: $f_{2Res} = kHz$. Wir testen nun mit dem Oszilloskop diese berechnete Resonanzfrequenz, indem wir
+die beiden Signale wieder in Phase bringen, wobei wir $f_{2Res} = kHz$ ablesen.
+
+
+\newpage
+\section{Verlustwiderstand einer Induktivität}
+\begin{task}
+  IIm zweiten Versuch soll durch das Ermitteln des Verlustwiderstands in Abhängigkeit von der Frequenz der Einfluss selbiger auf das Verhalten des Verlustwiderstands erarbeitet werden.
+  Gleichzeitig ist das Einstellen einer Kapazitätsdekade auf Resonanzfrequenz mit der Induktivität Gegenstand der Aufgabe.
+\end{task}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=1]{assets/images/Versuch2Schaltplan.PNG}
+    \caption{Schaltplan zur Bestimmung des Verlustwiderstands einer Induktivität}
+  \end{center}
+\end{figure}
+\begin{devlist}
+  T
+  \begin{itemize}
+    \item Oszilloskop
+    \item Kapazitätsdekade und Widerstandsdekade
+    \item Funktionsgenerator
+    \item Multimeter
+  \end{itemize}
+\end{devlist}
+\subsection{Vorbereitung}
+
+Wir wollen zuerst einmal aus den bereits erarbeiten Formeln die Berechnung der Kapazitätsdekade herleiten:
+\begin{equation}
+  C = \frac{1}{4\cdot\pi^2\cdot f_{Res}^2 \cdot L}
+\end{equation}
+Aus der Annahme, dass sich bei eingestellter Resonanzfrequenz die Impedanzen der Spule und der Kapazitätsdekade aufheben, können wir die Formel
+für die Berechnung des Verlustwiderstands $R_v$ aus dem Spannungsteiler herleiten:
+\begin{align*}
+  U_2                           & = U_1 \cdot \frac{R_v}{R_v+R}                \\
+  \left(R_v + R\right)\cdot U_2 & = U_1 \cdot R_v                              \\
+  R_v + R                       & = \frac{U_1}{U_2} \cdot R_v                  \\
+  R                             & = \left(\frac{U_1}{U_2} - 1\right) \cdot R_v \\
+\end{align*}
+Nun teilen wir noch durch $\frac{U_1}{U_2} - 1$ und bekommen:
+\begin{equation}
+  \frac{R}{\left(\frac{U_1}{U_2} - 1\right)}  = R_v
+\end{equation}
+
+Wir messen mit dem MetraHit vorher noch den Gleichstromwiderstand der Spule, um den später bei der Messung zu berücksichtigen.
+Dieser beträgt $R_{Cu} = \Omega$.
+
+\subsection{Versuchsdurchführung}
+
+Wir stellen die Kapazitätsdekade so ein, dass wir bei den Frequenzen $f = 1,2,5,10,20,50,100kHz$ jeweils die Resonanzfrequenz bekommen und Messen dann
+$U_1$ und $U_2$ mit dem Oszilloskop. Daraus errechnen wir dann $R_v$ und tragen diese Werte dann in einem Plot ab.
+
+\subsection{Auswertung}
+\begin{center}
+
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $\frac{f}{kHz}$ & $\frac{C_{Rechnung}}{\mu F}$ & $\frac{C_{Messung}}{\mu F}$ & $\frac{U_1}{mV}$ & $\frac{U_2}{mV}$ & $\frac{R_v}{\Omega}$ \\
+    \hline
+    1               &                              &                             &                  &                  &                      \\
+    \hline
+    2               &                              &                             &                  &                  &                      \\
+    \hline
+    5               &                              &                             &                  &                  &                      \\
+    \hline
+    10              &                              &                             &                  &                  &                      \\
+    \hline
+    20              &                              &                             &                  &                  &                      \\
+    \hline
+    50              &                              &                             &                  &                  &                      \\
+    \hline
+    100             &                              &                             &                  &                  &                      \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\newpage
+\begin{figure}
+
+\end{figure}
+
+\section{Serienverlustwiderstand eines Becherelkos}
+\begin{task}
+  IIm dritten und letzten Versuch soll nun der Serienverlustwiderstand eines RC-Glieds in einer Brückenschaltung gemessen und errechnet werden.
+  Dazu soll das Variieren einer Widerstands- und Kapazitätsdekade zum Abgleich einer einfachen Brückenschaltung als Methode der Messung geübt werden.
+\end{task}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.8]{assets/images/Versuch3Schaltplan.PNG}
+    \caption{Schaltplan der Brückenschaltung}
+  \end{center}
+\end{figure}
+\begin{devlist}
+  T
+  \begin{itemize}
+    \item Transformator
+    \item Oszilloskop
+    \item HP 4294A Impedance Analyzer
+    \item Kapazitätsdekade und Widerstandsdekade
+    \item Funktionsgenerator
+  \end{itemize}
+\end{devlist}
+\subsection{Vorbereitung}
+Unter der Vorraussetzung, dass die Variation des einstellbaren RC-Glieds ein Abgleich der Brückenschaltung hervorruft, gilt:
+\begin{align*}
+  \frac{C_N}{C_X} & = \frac{R_1}{R_2} \\
+  \frac{R_N}{R_X} & = \frac{R_2}{R_1} \\
+\end{align*}
+Aus diesen Vorraussetzungen folgt dann:
+\begin{align}
+  \frac{C_N\cdot R_2}{R_1} & = C_X\label{eq:CX} \\
+  \frac{R_N\cdot R_1}{R_2} & = R_X\label{eq:RX}
+\end{align}
+\subsection{Versuchsdurchführung}
+Wir stellen am Funktionsgenerator jeweils die Frequenzen $f= 100Hz, 500Hz\text{ und }1kHz$ ein und ermitteln die Kapazität $C_X$ und den Verlustwiderstand $R_X$
+und tragen dann die Werte in eine Tabelle ab. Im Anschluss werden die Ergebnisse dann mit dem HP 4294A Impedance Analyzer überprüft.
+
+\subsection{Auswertung}
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    $\frac{f}{Hz}$ & $\frac{C_X}{nF}$ & $\frac{R_X}{\Omega}$ & $\frac{U_{Br}}{\mu V}$ \\
+    \hline
+    100            &                  &                      &                        \\
+    \hline
+    500            &                  &                      &                        \\
+    \hline
+    1000           &                  &                      &                        \\
+    \hline
+  \end{tabular}
+\end{center}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    $\frac{f}{Hz}$ & $\frac{C_X}{nF}$ & $\frac{R_X}{\Omega}$ & $\frac{U_{Br}}{\mu V}$ \\
+    \hline
+    100            &                  &                      &                        \\
+    \hline
+    500            &                  &                      &                        \\
+    \hline
+    1000           &                  &                      &                        \\
+    \hline
+  \end{tabular}
+\end{center}
+
 \end{document}
-
-
-
-
-
-
-
