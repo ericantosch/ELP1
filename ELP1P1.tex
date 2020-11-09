@@ -47,7 +47,7 @@
 
 
 \begin{tikzpicture}[overlay,remember picture]
-\thispagestyle{empty}
+  \thispagestyle{empty}
   \fill[black!2] (current page.south west) rectangle (current page.north east);
 
   \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(-.5,-6)$)}}]
@@ -172,14 +172,22 @@ Um nun schlussendlich auch die Parallelresonanzfrequenz zu berechnen, gibt es no
 Um die Resonanzfrequenz zu ermitteln, müssen die beiden Spannungen $U_1$ und $U_2$ in Phase sein.
 Dazu variieren wir also am Frequenzgenerator die Frequenz des Eingangssignals $U_1$ so lange, bis sich
 $U_1$ und $U_2$ am Oszilloskop überlagern. An diesem Punkt ist auch $U_2$ minimal.
+Es ist außerdem hilfreich, das Oszilloskop im X-Y-Betrieb laufen zu lassen, damit man die Resonanzfrequenz noch genauer einstellen kann.
+Findet sich nämlich in der Form eine genau gerade und scharfe Linie vor, ist die Resonanzfrequenz erreicht.
 
 \subsection{Auswertung}
 
 Unsere abgelesene Resonanzfrequenz liegt nun also bei: $f_{1Res} = 835kHz$ (9,53).
 Aus dieser können wir mit (\ref{eq:LS}) die gesuchte Serieninduktivität des Drahtwiderstands berechnen: $L_S = 3,633\mu H$\\[3pt]
 Um nun die Serienresonanzfrequenz mit der Parallelresonanzfrequenz zu vergleichen, setzen wir unsere errechnete Induktivität in
-(\ref{eq:f2}) ein und erhalten dadurch: $f_{2Res} = 548,745kHz$. Wir testen nun mit dem Oszilloskop diese berechnete Resonanzfrequenz, indem wir
+(\ref{eq:f2}) ein und erhalten dadurch: $f_{2Res} = 648,745kHz$. Wir testen nun mit dem Oszilloskop diese berechnete Resonanzfrequenz, indem wir
 die beiden Signale wieder in Phase bringen, wobei wir $f_{2Res} = 652kHz$ (9,55) ablesen.
+
+Da unsere Rechnungen auf der Annahme beruhen, dass unsere Bauteile, im Besonderen der Kondensator, bei jeder Frequenz die gleichen Kenngrößen haben,
+erkennen wir eine mögliche Fehlerquelle. Mit dem HP4294A messen wir bei den bestimmten Resonanzfrequenzen die Kapazität aus und erhalten bei $f_{1Res}$ eine Kapazität
+von $C_{f1}=9,53nF$ und bei $f_{2Res}$ eine Kapazität von $C_{f2} = 9,55nF$. Aus den angepassten Werten ergibt sich dann eine Serieninduktivität von $L_S = 3,812\mu F$
+und eine Parallelresonanzfrequenz von $f_{2Res} = 666,922kHZ$. Da sich allerdings diese Messwerte implizit auf den "falschen" Messwerten beruhen, sind hier die Toleranzen aufgrund der
+Fehlerfortpflanzung größer. Dazu kommen noch Ungenauigkeiten bei den Geräten und deren Bedienung.  
 
 
 \newpage
@@ -198,9 +206,9 @@ die beiden Signale wieder in Phase bringen, wobei wir $f_{2Res} = 652kHz$ (9,55)
   T
   \begin{itemize}
     \item Oszilloskop: Tektronix MDO3012
-    \item Kapazitätsdekade Time Electronics Cap.Box Model 1071
-    \item Funktionsgenerator
-    \item Multimeter
+    \item Kapazitätsdekade Time Electronics Model 1071 CapBox  
+    \item Funktionsgenerator: Keysight 33210A
+    \item Multimeter: MetraHit X-TRA Multimeter
   \end{itemize}
 \end{devlist}
 \subsection{Vorbereitung}
@@ -237,19 +245,19 @@ $U_1$ und $U_2$ mit dem Oszilloskop. Daraus errechnen wir dann $R_v$ und tragen 
     \hline
     $\frac{f}{kHz}$ & $\frac{C_{Rechnung}}{\mu F}$ & $\frac{C_{Messung}}{\mu F}$ & $\frac{U_1}{mV}$ & $\frac{U_2}{mV}$ & $\frac{R_v}{\Omega}$ \\
     \hline
-    1               & $1,151377$                   & $1,13019$                   & $952$            & $37,11$          &     $40,56$                 \\
+    1               & $1,151377$                   & $1,13019$                   & $952$            & $37,11$          & $40,56$              \\
     \hline
-    2               & $0,287$                      & $0,282$                     & $953$            & $37,5$           &       $40,96$               \\
+    2               & $0,287$                      & $0,282$                     & $953$            & $37,5$           & $40,96$              \\
     \hline
-    5               & $0,046055$                   & $0,04556$                   & $956,1$          & $40,02$          &        $43,69$              \\
+    5               & $0,046055$                   & $0,04556$                   & $956,1$          & $40,02$          & $43,69$              \\
     \hline
-    10              & $0,0151$                     & $0,0113$                    & $952,1$          & $30,93$          &       $33,576$               \\
+    10              & $0,0151$                     & $0,0113$                    & $952,1$          & $30,93$          & $33,576$             \\
     \hline
-    20              & $0,002878$                   & $0,00278$                   & $955$            & $36,1$           &        $39,286$              \\
+    20              & $0,002878$                   & $0,00278$                   & $955$            & $36,1$           & $39,286$             \\
     \hline
-    50              & $460pF$                      & $370pF$                     & $959$            & $79$             &         $89,772$             \\
+    50              & $460pF$                      & $370pF$                     & $959$            & $79$             & $89,772$             \\
     \hline
-    100             & $151pF$                      & $30pF$                      & $972$            & $405$            &          $714,28$            \\
+    100             & $151pF$                      & $30pF$                      & $972$            & $405$            & $714,28$             \\
     \hline
   \end{tabular}
 \end{center}
@@ -259,10 +267,11 @@ $U_1$ und $U_2$ mit dem Oszilloskop. Daraus errechnen wir dann $R_v$ und tragen 
     \caption{Der Verlustwiderstand doppelt logarithmisch von der Frequenz abgetragen}
   \end{center}
 \end{figure}
+Aus der Abbildung und den Messwerten folgt nun, dass bei kleinen Frequenzen bis ca. 50kHz die Auswirkungen der Frequenz auf den Verlustwiderstand minimal sind.
+Der Verlustwiderstand wird zu einem großen Teil durch den Gleichstromwiderstand $C_{Cu}$ bestimmt. Ab dieser Marke setzt dann der Skin-Effekt ein; hier wird auch die 
+Frequenzabhängigkeit eines Widerstandes eindrucksvoll klar. Es ist außerdem anzumerken, dass sich daraus, für die Anwendung in echten Schaltkreisen eine Präferenz für niedrige Frequenzen ergibt,
+wenn man zum Ziel hat, den Verlustwiderstand einer Induktivität möglichst gering zu halten.
 \newpage
-\begin{figure}
-
-\end{figure}
 
 \section{Serienverlustwiderstand eines Becherelkos}
 \begin{task}
@@ -279,10 +288,10 @@ $U_1$ und $U_2$ mit dem Oszilloskop. Daraus errechnen wir dann $R_v$ und tragen 
   T
   \begin{itemize}
     \item Transformator Sennheiser RVZ11
-    \item Oszilloskop 
+    \item Oszilloskop: Tektronix MDO3012
     \item Kapazitätsdekade: Time Electronics Model 1071 CapBox
     \item Widerstandsdekade: Time Electronics Model 1051 ResBox
-    \item Funktionsgenerator
+    \item Funktionsgenerator: Keysight 33210A
   \end{itemize}
 \end{devlist}
 \subsection{Vorbereitung}
@@ -315,4 +324,8 @@ und tragen dann die Werte in eine Tabelle ab. Im Anschluss werden die Ergebnisse
     \hline
   \end{tabular}
 \end{center}
+Wir erkennen einen deutlichen Abfall der Kapazität des Becherelkos sowie ihres Serienwiderstandes bei steigender Frequenz. Im 
+Gegensatz zur Aufgabe 2 ist hier der Einfluss des Skin-Effektes nicht zu verspüren, da hier keine hochfrequenten Signale verwendet werden. Bei der Bestimmung von unbekannten
+passiven Bauelementen ist es also förderlich auch die Frequenz bei der Analyse der Ergebnisse mit einzubeziehen und dann gegebenenfalls auch eine Bezugsfrequenz festzulegen.
+
 \end{document}
