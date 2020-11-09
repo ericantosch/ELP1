@@ -44,10 +44,10 @@
 
 \begin{document}
 
-\pagestyle{empty}
+
 
 \begin{tikzpicture}[overlay,remember picture]
-
+\thispagestyle{empty}
   \fill[black!2] (current page.south west) rectangle (current page.north east);
 
   \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(-.5,-6)$)}}]
@@ -118,7 +118,7 @@
 
 \end{tikzpicture}
 \newpage
-
+\thispagestyle{empty}
 
 \tableofcontents
 
@@ -139,10 +139,10 @@
 \begin{devlist}
   T
   \begin{itemize}
-    \item Oszilloskop
-    \item Funktionsgenerator
+    \item Oszilloskop: Tektronix MDO3012
+    \item Funktionsgenerator: Keysight 33210A
     \item HP 4294A Impedance Analyzer
-    \item Multimeter
+    \item Multimeter: MetraHit X-TRA Multimeter
   \end{itemize}
 \end{devlist}
 \subsection{Vorbereitung}
@@ -175,11 +175,11 @@ $U_1$ und $U_2$ am Oszilloskop überlagern. An diesem Punkt ist auch $U_2$ minim
 
 \subsection{Auswertung}
 
-Unsere abgelesene Resonanzfrequenz liegt nun also bei: $f_{1Res} = kHz$.
-Aus dieser können wir mit (\ref{eq:LS}) die gesuchte Serieninduktivität des Drahtwiderstands berechnen: $L_S = \mu H$\\[3pt]
+Unsere abgelesene Resonanzfrequenz liegt nun also bei: $f_{1Res} = 835kHz$ (9,53).
+Aus dieser können wir mit (\ref{eq:LS}) die gesuchte Serieninduktivität des Drahtwiderstands berechnen: $L_S = 3,633\mu H$\\[3pt]
 Um nun die Serienresonanzfrequenz mit der Parallelresonanzfrequenz zu vergleichen, setzen wir unsere errechnete Induktivität in
-(\ref{eq:f2}) ein und erhalten dadurch: $f_{2Res} = kHz$. Wir testen nun mit dem Oszilloskop diese berechnete Resonanzfrequenz, indem wir
-die beiden Signale wieder in Phase bringen, wobei wir $f_{2Res} = kHz$ ablesen.
+(\ref{eq:f2}) ein und erhalten dadurch: $f_{2Res} = 548,745kHz$. Wir testen nun mit dem Oszilloskop diese berechnete Resonanzfrequenz, indem wir
+die beiden Signale wieder in Phase bringen, wobei wir $f_{2Res} = 652kHz$ (9,55) ablesen.
 
 
 \newpage
@@ -197,8 +197,8 @@ die beiden Signale wieder in Phase bringen, wobei wir $f_{2Res} = kHz$ ablesen.
 \begin{devlist}
   T
   \begin{itemize}
-    \item Oszilloskop
-    \item Kapazitätsdekade und Widerstandsdekade
+    \item Oszilloskop: Tektronix MDO3012
+    \item Kapazitätsdekade Time Electronics Cap.Box Model 1071
     \item Funktionsgenerator
     \item Multimeter
   \end{itemize}
@@ -223,7 +223,7 @@ Nun teilen wir noch durch $\frac{U_1}{U_2} - 1$ und bekommen:
 \end{equation}
 
 Wir messen mit dem MetraHit vorher noch den Gleichstromwiderstand der Spule, um den später bei der Messung zu berücksichtigen.
-Dieser beträgt $R_{Cu} = \Omega$.
+Dieser beträgt $R_{Cu} = 38,8\Omega$.
 
 \subsection{Versuchsdurchführung}
 
@@ -237,23 +237,28 @@ $U_1$ und $U_2$ mit dem Oszilloskop. Daraus errechnen wir dann $R_v$ und tragen 
     \hline
     $\frac{f}{kHz}$ & $\frac{C_{Rechnung}}{\mu F}$ & $\frac{C_{Messung}}{\mu F}$ & $\frac{U_1}{mV}$ & $\frac{U_2}{mV}$ & $\frac{R_v}{\Omega}$ \\
     \hline
-    1               &                              &                             &                  &                  &                      \\
+    1               & $1,151377$                   & $1,13019$                   & $952$            & $37,11$          &     $40,56$                 \\
     \hline
-    2               &                              &                             &                  &                  &                      \\
+    2               & $0,287$                      & $0,282$                     & $953$            & $37,5$           &       $40,96$               \\
     \hline
-    5               &                              &                             &                  &                  &                      \\
+    5               & $0,046055$                   & $0,04556$                   & $956,1$          & $40,02$          &        $43,69$              \\
     \hline
-    10              &                              &                             &                  &                  &                      \\
+    10              & $0,0151$                     & $0,0113$                    & $952,1$          & $30,93$          &       $33,576$               \\
     \hline
-    20              &                              &                             &                  &                  &                      \\
+    20              & $0,002878$                   & $0,00278$                   & $955$            & $36,1$           &        $39,286$              \\
     \hline
-    50              &                              &                             &                  &                  &                      \\
+    50              & $460pF$                      & $370pF$                     & $959$            & $79$             &         $89,772$             \\
     \hline
-    100             &                              &                             &                  &                  &                      \\
+    100             & $151pF$                      & $30pF$                      & $972$            & $405$            &          $714,28$            \\
     \hline
   \end{tabular}
 \end{center}
-
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.75]{assets/images/Plot.PNG}
+    \caption{Der Verlustwiderstand doppelt logarithmisch von der Frequenz abgetragen}
+  \end{center}
+\end{figure}
 \newpage
 \begin{figure}
 
@@ -273,10 +278,10 @@ $U_1$ und $U_2$ mit dem Oszilloskop. Daraus errechnen wir dann $R_v$ und tragen 
 \begin{devlist}
   T
   \begin{itemize}
-    \item Transformator
-    \item Oszilloskop
-    \item HP 4294A Impedance Analyzer
-    \item Kapazitätsdekade und Widerstandsdekade
+    \item Transformator Sennheiser RVZ11
+    \item Oszilloskop 
+    \item Kapazitätsdekade: Time Electronics Model 1071 CapBox
+    \item Widerstandsdekade: Time Electronics Model 1051 ResBox
     \item Funktionsgenerator
   \end{itemize}
 \end{devlist}
@@ -302,26 +307,12 @@ und tragen dann die Werte in eine Tabelle ab. Im Anschluss werden die Ergebnisse
     \hline
     $\frac{f}{Hz}$ & $\frac{C_X}{nF}$ & $\frac{R_X}{\Omega}$ & $\frac{U_{Br}}{\mu V}$ \\
     \hline
-    100            &                  &                      &                        \\
+    100            & $1000$           & $81$                 & $4,2$                  \\
     \hline
-    500            &                  &                      &                        \\
+    500            & $988$            & $21$                 & $6,4$                  \\
     \hline
-    1000           &                  &                      &                        \\
-    \hline
-  \end{tabular}
-\end{center}
-\begin{center}
-  \begin{tabular}{|c|c|c|c|}
-    \hline
-    $\frac{f}{Hz}$ & $\frac{C_X}{nF}$ & $\frac{R_X}{\Omega}$ & $\frac{U_{Br}}{\mu V}$ \\
-    \hline
-    100            &                  &                      &                        \\
-    \hline
-    500            &                  &                      &                        \\
-    \hline
-    1000           &                  &                      &                        \\
+    1000           & $898$            & $20$                 & $4,2$                  \\
     \hline
   \end{tabular}
 \end{center}
-
 \end{document}
